@@ -15,21 +15,17 @@ import wx.adv
 import subprocess
 import os
 
-#### CONFIG START ####
-
 # update period in ms
-UPDATE_PERIOD = 60 * 60 * 1000
+UPDATE_PERIOD = int (os.getenv('UPDATE_PERIOD', 60 * 60 * 1000))
 
 # terminal has to support `-e` parameter
-TERMINAL = "xterm"
+TERMINAL = os.getenv('TERMINAL', "xterm")
 
 # the cmd to execute when clicking update
 UPDATE_CMD = os.getenv('UPDATE_CMD', "sudo pacman -Syu")
 
 # the folder used to search the icons
 ICONS_FOLDER = os.getenv('ICONS_FOLDER', "/usr/share/pixmaps/archupdate-indicator")
-
-#### CONFIG END ####
 
 ARCHUPDATE_INDICATOR_VERSION = "0.0.1"
 
