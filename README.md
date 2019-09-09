@@ -23,7 +23,7 @@ cp -r img/ /usr/share/pixmaps/archupdate-indicator
 
 ### AUR
 
-TODO
+https://aur.archlinux.org/packages/archupdate-indicator/
 
 ## Release History
 
