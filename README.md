@@ -27,6 +27,8 @@ https://aur.archlinux.org/packages/archupdate-indicator/
 
 ## Release History
 
+* 1.0.0
+    * Add return code 2 handling of checkupdates
 * 0.0.2
     * Add additional environment variables
 * 0.0.1
