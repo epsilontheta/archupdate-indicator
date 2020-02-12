@@ -93,6 +93,7 @@ class TaskBarIcon(wx.adv.TaskBarIcon):
 
 		complProc = subprocess.run(["checkupdates"], capture_output=True, text=True, encoding='utf-8')
 		icon = Icons.NO_UPDATES
+		# there are updates
 		if complProc.returncode == 0:
 			self.updates = complProc.stdout.splitlines()
 			numUpdates = len(self.updates)
@@ -101,6 +102,12 @@ class TaskBarIcon(wx.adv.TaskBarIcon):
 				print ("Found {} update(s)".format (numUpdates))
 			else:
 				print ("No updates found")
+		# return code 2 = no updates
+		elif complProc.returncode == 2:
+			self.updates = []
+			icon = Icons.NO_UPDATES
+			print ("No updates found")
+		# treat everything else as error
 		else:
 			print ("checkupdates returned error code {}".format (complProc.returncode))
 			self.updates.append("checkupdates failed")
