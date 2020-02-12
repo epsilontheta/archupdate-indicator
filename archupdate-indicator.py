@@ -27,7 +27,7 @@ UPDATE_CMD = os.getenv('UPDATE_CMD', "sudo pacman -Syu")
 # the folder used to search the icons
 ICONS_FOLDER = os.getenv('ICONS_FOLDER', "/usr/share/pixmaps/archupdate-indicator")
 
-ARCHUPDATE_INDICATOR_VERSION = "0.0.2"
+ARCHUPDATE_INDICATOR_VERSION = "1.0.0"
 
 class Icons:
 	def __getPath(x):
